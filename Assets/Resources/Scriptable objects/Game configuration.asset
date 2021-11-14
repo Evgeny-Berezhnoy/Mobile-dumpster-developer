@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6ce04491f75fb4fbd684bef28a7bf4, type: 3}
+  m_Name: Game configuration
+  m_EditorClassIdentifier: 
+  _player: Scriptable objects/Player car configuration
+  _gameplayView: Prefabs/UI/Gameplay interface
+  _gameplayJoystickView: Prefabs/UI/Gameplay joystick interface
+  _mainMenuView: Prefabs/UI/Main Menu
