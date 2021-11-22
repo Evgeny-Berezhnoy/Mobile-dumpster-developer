@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2931052591222046701}
   - component: {fileID: 9138088301481253510}
   - component: {fileID: 1239554189516767654}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 70.557625, y: 3.173753}
+  m_Size: {x: 6.26, y: 3.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -122,7 +122,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 6.26, y: 3.13}
-    newSize: {x: 70.557625, y: 3.173753}
+    newSize: {x: 6.26, y: 3.13}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0

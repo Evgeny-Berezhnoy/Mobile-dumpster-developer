@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Abilities;
 using Cars;
 using ExtensionCompilation;
 using Game;
@@ -12,7 +13,7 @@ using Object = UnityEngine.Object;
 namespace Player
 {
 
-    public class PlayerController : IController, IFixedUpdate, IToggleObject, IGameStateListener, IDisposableAdvanced
+    public class PlayerController : IController, IFixedUpdate, IToggleObject, IGameStateListener, IDisposableAdvanced, IAbilityReceiver
     {
 
         #region Fields
@@ -36,7 +37,7 @@ namespace Player
 
         #region Constructors
 
-        public PlayerController(Transform playerTransform, CarModel carModel, BaseInput inputController, GameStateController gameStateController)
+        public PlayerController(Transform playerTransform, CarModel carModel, BaseInput inputController, AbilityUISubscriber abilityUISubscriber, GameStateController gameStateController)
         {
 
             _view = Object.Instantiate(carModel.View);
@@ -50,6 +51,9 @@ namespace Player
             CurrentGameStateController = gameStateController;
             
             _playerMoveController   = new PlayerMoveRigidbodyController(playerTransform, carModel.Speed, _view, inputController, gameStateController);
+
+            abilityUISubscriber.SubscribeReceiver(EAbilityRecieverType.Player, _view);
+            abilityUISubscriber.SubscribeReceiver(EAbilityRecieverType.PlayerMovement, _playerMoveController);
 
         }
 

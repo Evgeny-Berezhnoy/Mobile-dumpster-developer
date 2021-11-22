@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2374574453896727396}
   - component: {fileID: 5327860078810683156}
   - component: {fileID: 4131801193651613255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2374574455409539966}
   - component: {fileID: 2374574455409539965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2374574455626170455}
   - component: {fileID: 2374574455626170454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fore wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2374574455798022354}
   - component: {fileID: 5638344695872140158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594008dbe3db0264293245f5fd012ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _abilityTransform: {fileID: 2374574453896727397}
   _cameraTransform: {fileID: 5901717476362144296}
   _rigidbody: {fileID: 5327860078810683156}
   _collider: {fileID: 4131801193651613255}
@@ -354,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5901717476362144296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
