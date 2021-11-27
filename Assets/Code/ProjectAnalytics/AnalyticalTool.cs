@@ -11,7 +11,7 @@ namespace ProjectAnalytics
         public void InvokeAnalyticalEvent(string eventName)
         {
 
-            var x = Analytics.CustomEvent(eventName);
+            Analytics.CustomEvent(eventName);
 
         }
 
@@ -32,7 +32,7 @@ namespace ProjectAnalytics
         public void InvokeAnalyticalEvent(string eventName, Dictionary<string, object> eventData)
         {
 
-            var x = Analytics.CustomEvent(eventName, eventData);
+            Analytics.CustomEvent(eventName, eventData);
 
         }
 

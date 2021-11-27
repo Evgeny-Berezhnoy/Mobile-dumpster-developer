@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Abilities;
 using InputLogic;
 using MVC;
 using Player;
@@ -15,7 +16,7 @@ namespace Game
 
         [Header("Root transforms")]
         [SerializeField] private Transform _player;
-        [SerializeField] private Transform _userIntreface;
+        [SerializeField] private RectTransform _userIntreface;
 
         [Header("Prefabs")]
         [SerializeField] private GameConfiguration _configuration;
@@ -47,10 +48,13 @@ namespace Game
             _gameModel                  = new GameModel(_configuration, _inputMode);
 
             _controllersList            = new ControllersList();
-            
-            _uiInitializer              = new UIInitializer(_userIntreface, _gameModel, gameStateController);
+
+            var abilityRepository       = new AbilityRepository(_gameModel.Abilities);
+            var abilityUISubscriber     = new AbilityUISubscriber(abilityRepository.Abilities);
+
+            _uiInitializer              = new UIInitializer(_userIntreface, _gameModel, abilityUISubscriber, gameStateController);
             _inputInitializer           = new InputInitializer(_controllersList, _inputMode, _uiInitializer.GameplayUIView);
-            _playerInitializer          = new PlayerInitializer(_controllersList, _player, _gameModel.PlayerCar, _inputInitializer.InputController, gameStateController);
+            _playerInitializer          = new PlayerInitializer(_controllersList, _player, _gameModel.PlayerCar, _inputInitializer.InputController, abilityUISubscriber, gameStateController);
 
             _advertisementDispayer      = new AdvertisementDispayer(gameStateController);
 

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using Abilities;
 
 namespace Cars
 {
 
-    public class CarView : MonoBehaviour
+    public class CarView : AbilityRootView
     {
 
         #region Fields

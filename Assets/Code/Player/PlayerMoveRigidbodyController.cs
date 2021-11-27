@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Abilities;
 using Cars;
 using Constants;
 using ExtensionCompilation;
@@ -12,7 +13,7 @@ using StandardObjects;
 namespace Player
 {
 
-    public class PlayerMoveRigidbodyController : MoveController, IFixedUpdate, IGameStateListener, IToggleObject, IDisposableAdvanced
+    public class PlayerMoveRigidbodyController : MoveController, IFixedUpdate, IGameStateListener, IToggleObject, IDisposableAdvanced, IAbilityReceiver
     {
 
         #region Fields
@@ -45,6 +46,13 @@ namespace Player
 
         #endregion
 
+        #region Properties
+
+        public Rigidbody2D Rigidbody => _rigidbody;
+        public RestrictionsContactsPoller2D<BoxCollider2D> ContactsPoller => _contactsPoller;
+
+        #endregion
+
         #region Constructors
 
         public PlayerMoveRigidbodyController(Transform playerStartTransform, float speed, CarView playerView, BaseInput inputController, GameStateController gameStateController) : base(playerView.transform, speed)
@@ -55,7 +63,7 @@ namespace Player
             _playerStartTransform           = playerStartTransform;
             _collider                       = playerView.Collider;
             _rigidbody                      = playerView.RigidBody;
-            
+
             _contactsPoller                 = new RestrictionsContactsPoller2D<BoxCollider2D>(_collider, LayerMasks.OBSTACLES);
 
             _inputController                = inputController;

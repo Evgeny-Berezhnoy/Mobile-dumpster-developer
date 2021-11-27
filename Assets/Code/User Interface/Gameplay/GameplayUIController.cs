@@ -21,6 +21,7 @@ namespace UserInterface
         #region Properties
 
         public IGameplayUIView View => _view;
+        public RectTransform Root => (RectTransform)_view.transform;
 
         #endregion
 
@@ -34,7 +35,7 @@ namespace UserInterface
 
         #region Constructors
 
-        public GameplayUIController(Transform root, GameplayUIView viewPrefab, GameStateController gameStateController)
+        public GameplayUIController(RectTransform root, GameplayUIView viewPrefab, GameStateController gameStateController)
         {
 
             _view = Object.Instantiate(viewPrefab, root);

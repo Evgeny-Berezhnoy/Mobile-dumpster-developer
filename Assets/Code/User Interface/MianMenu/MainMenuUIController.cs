@@ -32,7 +32,7 @@ namespace UserInterface
 
         #region Constructors
 
-        public MainMenuUIController(Transform root, MainMenuUIView viewPrefab, GameStateController gameStateController)
+        public MainMenuUIController(RectTransform root, MainMenuUIView viewPrefab, GameStateController gameStateController)
         {
 
             _view = Object.Instantiate(viewPrefab, root);
