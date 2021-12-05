@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using Abilities;
+using AIDemo;
 using Cars;
 using InputLogic;
 using Models;
+using RewardSlotsDemo;
 using UserInterface;
 
 namespace Game
@@ -18,6 +20,10 @@ namespace Game
 
         private MainMenuUIView _mainMenu;
         private GameplayUIView _gameplayInterface;
+        private FightUIView _fightWindow;
+        private DailyRewardView _rewardsWindow;
+        private CurrencyView _currencySlot;
+        private ContainerSlotRewardView _containerSlotReward;
         private SlidingPanel _slidingPanel;
         private UIImage _passiveAbilityIcon;
         private UIButton _activeAbilityButton;
@@ -30,6 +36,10 @@ namespace Game
         public List<AbilityModel> Abilities => _abilitiesCollection.Models;
         public MainMenuUIView MainMenu => _mainMenu;
         public GameplayUIView GameplayInterface => _gameplayInterface;
+        public FightUIView FightWindow => _fightWindow;
+        public DailyRewardView RewardsWindow => _rewardsWindow;
+        public CurrencyView CurrencySlot => _currencySlot;
+        public ContainerSlotRewardView ContainerSlotReward => _containerSlotReward;
         public SlidingPanel SlidingPanel => _slidingPanel;
         public UIImage PassiveAbilityIcon => _passiveAbilityIcon;
         public UIButton ActiveAbilityButton => _activeAbilityButton;
@@ -48,6 +58,10 @@ namespace Game
             _abilitiesCollection        = new AbilitiesCollectionModel(AbilitiesCollectionData);
 
             _mainMenu                   = ResourceLoader.LoadComponent<MainMenuUIView>(configuration.MainMenuView);
+            _fightWindow                = ResourceLoader.LoadComponent<FightUIView>(configuration.FightView);
+            _rewardsWindow              = ResourceLoader.LoadComponent<DailyRewardView>(configuration.RewardsWindow);
+            _currencySlot               = ResourceLoader.LoadComponent<CurrencyView>(configuration.CurrencySlot);
+            _containerSlotReward        = ResourceLoader.LoadComponent<ContainerSlotRewardView>(configuration.ContainerSlotRewardView);
             _slidingPanel               = ResourceLoader.LoadComponent<SlidingPanel>(configuration.SlidingPanel);
             _passiveAbilityIcon         = ResourceLoader.LoadComponent<UIImage>(configuration.PassiveAbilityIcon);
             _activeAbilityButton        = ResourceLoader.LoadComponent<UIButton>(configuration.ActiveAbilityButton);

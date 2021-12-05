@@ -37,7 +37,6 @@ namespace Game
 
         #endregion
 
-
         #region Unity Events
 
         private void Start()
@@ -52,7 +51,7 @@ namespace Game
             var abilityRepository       = new AbilityRepository(_gameModel.Abilities);
             var abilityUISubscriber     = new AbilityUISubscriber(abilityRepository.Abilities);
 
-            _uiInitializer              = new UIInitializer(_userIntreface, _gameModel, abilityUISubscriber, gameStateController);
+            _uiInitializer              = new UIInitializer(_controllersList, _userIntreface, _gameModel, abilityUISubscriber, gameStateController);
             _inputInitializer           = new InputInitializer(_controllersList, _inputMode, _uiInitializer.GameplayUIView);
             _playerInitializer          = new PlayerInitializer(_controllersList, _player, _gameModel.PlayerCar, _inputInitializer.InputController, abilityUISubscriber, gameStateController);
 

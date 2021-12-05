@@ -30,12 +30,7 @@ namespace UserInterface
         public float SlideDistance
         {
 
-            get
-            {
-
-                return (_hideShowButton.transform.position - _slotsPanel.position).x;
-
-            }
+            get => (transform.position - _slotsPanel.position).x;
 
         } 
 

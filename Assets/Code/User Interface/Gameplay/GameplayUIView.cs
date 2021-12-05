@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace UserInterface
 {
@@ -9,13 +8,15 @@ namespace UserInterface
 
         #region Fields
 
-        [SerializeField] private Button _endButton;
+        [SerializeField] private TweenButton _endButton;
+        [SerializeField] private TweenButton _fightButton;
 
         #endregion
 
         #region Properties
 
-        public Button EndButton => _endButton;
+        public TweenButton EndButton => _endButton;
+        public TweenButton FightButton => _fightButton;
 
         #endregion
 

@@ -9,7 +9,7 @@ using Object = UnityEngine.Object;
 namespace UserInterface
 {
 
-    class MainMenuUIController : IController, IGameStateListener, IToggleObject, IDisposableAdvanced
+    class MainMenuUIController : IController, IGameStateToggleListener, IDisposableAdvanced
     {
 
         #region Fields
@@ -40,20 +40,27 @@ namespace UserInterface
             CurrentGameStateController = gameStateController;
             CurrentGameStateController.AddHandler(OnGameStateChange);
 
-            _view.StartButton.onClick.AddListener(() =>
+            _view.StartButton.AddHandler(() =>
             {
 
                 CurrentGameStateController.State = EGameState.Play;
 
             });
 
-            _view.QuitButton.onClick.AddListener(() =>
+            _view.QuitButton.AddHandler(() =>
             {
 
                 CurrentGameStateController.State = EGameState.Quit;
 
             });
-            
+
+            _view.RewardsButton.AddHandler(() =>
+            {
+
+                CurrentGameStateController.State = EGameState.DailyReward;
+
+            });
+
         }
 
         #endregion
@@ -125,18 +132,14 @@ namespace UserInterface
 
             IsDisposed = true;
 
-            if(CurrentGameStateController != null)
-            {
-
-                CurrentGameStateController.RemoveHandler(OnGameStateChange);
-                
-            };
-
-            _view.StartButton.onClick.RemoveAllListeners();
-            _view.QuitButton.onClick.RemoveAllListeners();
+            _view.StartButton.Dispose();
+            _view.QuitButton.Dispose();
+            _view.RewardsButton.Dispose();
             
             Object.Destroy(_view);
 
+            CurrentGameStateController?.RemoveHandler(OnGameStateChange);
+            
             GC.SuppressFinalize(this);
 
         }

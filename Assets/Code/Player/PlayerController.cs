@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 namespace Player
 {
 
-    public class PlayerController : IController, IFixedUpdate, IToggleObject, IGameStateListener, IDisposableAdvanced, IAbilityReceiver
+    public class PlayerController : IController, IFixedUpdate, IGameStateToggleListener, IDisposableAdvanced, IAbilityReceiver
     {
 
         #region Fields

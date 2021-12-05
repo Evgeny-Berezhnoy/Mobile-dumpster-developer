@@ -1,7 +1,7 @@
 ﻿namespace Game
 {
 
-    interface IGameStateListener
+    public interface IGameStateListener
     {
 
         #region Properties
