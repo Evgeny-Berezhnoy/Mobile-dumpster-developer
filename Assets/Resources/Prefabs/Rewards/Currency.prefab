@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 5524241010989534109}
   - component: {fileID: 901145394093998076}
   - component: {fileID: 4438919033127579802}
+  - component: {fileID: 7172600534159771162}
   m_Layer: 5
   m_Name: Currency
   m_TagString: Untagged
@@ -150,6 +151,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7172600534159771162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855110434740812649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2601ca49c840d31468da6ddbce3fdc33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 8120710922107131301}
+  _currentCount: {fileID: 2325439059299947635}
 --- !u!1 &6551688049241342652
 GameObject:
   m_ObjectHideFlags: 0

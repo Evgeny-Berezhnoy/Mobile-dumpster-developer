@@ -11,7 +11,7 @@ using Object = UnityEngine.Object;
 namespace UserInterface
 {
 
-    public class SlidingPanelController<T1, T2> : IController, IGameStateListener, IToggleObject, IDisposableAdvanced
+    public class SlidingPanelController<T1, T2> : IController, IGameStateToggleListener, IDisposableAdvanced
         where T1 : MonoBehaviour
         where T2 : ISlidingSlotData
     {

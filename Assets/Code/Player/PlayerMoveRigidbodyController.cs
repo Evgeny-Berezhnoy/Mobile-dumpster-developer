@@ -13,7 +13,7 @@ using StandardObjects;
 namespace Player
 {
 
-    public class PlayerMoveRigidbodyController : MoveController, IFixedUpdate, IGameStateListener, IToggleObject, IDisposableAdvanced, IAbilityReceiver
+    public class PlayerMoveRigidbodyController : MoveController, IFixedUpdate, IGameStateToggleListener, IDisposableAdvanced, IAbilityReceiver
     {
 
         #region Fields
@@ -166,7 +166,7 @@ namespace Player
 
             _inputController.RemoveAxisShiftHandler(Move);
 
-            _rigidbody.MovePosition(_playerStartTransform.position);
+            _rigidbody.position = _playerStartTransform.position;
             _rigidbody.bodyType = RigidbodyType2D.Static;
 
             _direction          = Vector2.zero;
@@ -194,19 +194,9 @@ namespace Player
 
             IsDisposed = true;
 
-            if(_inputController != null)
-            {
-
-                _inputController.RemoveAxisShiftHandler(Move);
-                
-            };
-
-            if(CurrentGameStateController != null)
-            {
-
-                CurrentGameStateController.RemoveHandler(OnGameStateChange);
-
-            };
+            _inputController?.RemoveAxisShiftHandler(Move);
+            
+            CurrentGameStateController?.RemoveHandler(OnGameStateChange);
 
             GC.SuppressFinalize(this);
 

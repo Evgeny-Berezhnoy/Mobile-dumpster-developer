@@ -17,6 +17,10 @@ MonoBehaviour:
   _gameplayView: Prefabs/UI/Gameplay interface
   _gameplayJoystickView: Prefabs/UI/Gameplay joystick interface
   _mainMenuView: Prefabs/UI/Main Menu
+  _fightWindow: Prefabs/UI/Fight
+  _rewardsWindow: Prefabs/Rewards/Reward window
+  _currencySlot: Prefabs/Rewards/Currency
+  _containerSlotRewardView: Prefabs/Rewards/Reward slot
   _slidingPanel: Prefabs/UI/Sliding panel
   _passiveAbilityIcon: Prefabs/UI/Passive ability
   _activeAbilityButton: Prefabs/UI/Active ability

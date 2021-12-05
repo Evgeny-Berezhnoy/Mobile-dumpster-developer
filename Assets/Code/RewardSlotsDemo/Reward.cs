@@ -8,7 +8,7 @@ namespace RewardSlotsDemo
     public class Reward
     {
     
-        public RewardType RewardType;
+        public ERewardType RewardType;
         public Sprite IconCurrency;
         public int CountCurrency;
     
